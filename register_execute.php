@@ -8,6 +8,7 @@ $info  = $_POST["info"];
 // TODO 入力チェックを実装
 
 // SQLを実行し、データをインサート
+// TODO エラー時の処理
 $pdo = new PDO('mysql:dbname=gs_db;host=localhost', 'root', '');
 $stmt = $pdo->query('SET NAMES utf8');
 $stmt = $pdo->prepare("INSERT INTO gs_cms_user(
