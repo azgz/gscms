@@ -8,6 +8,7 @@ $stmt = $pdo->prepare("SELECT * FROM gs_cms_user");
 $stmt->execute();
 $view = "";
 // SQLの結果から、HTMLを生成
+// TODO update.php へのリンクを生成(更新リンクを付ける)
 while ($result = $stmt->fetch(PDO::FETCH_ASSOC)){
     $id = $result['id'];
     $name = $result['name'];
@@ -15,7 +16,7 @@ while ($result = $stmt->fetch(PDO::FETCH_ASSOC)){
     $age = $result['age'];
     $create_date = $result['create_date'];
     $view .= '<ul><li>'. $id . '</li><li>'. $name . '</li><li>' . $email . '</li><li>'
-    		 . $age . '</li><li>' . $create_date . '</ul>';
+    		 . $age . '</li><li>' . $create_date . '</li><li><a href="">更新</a></li></ul>';
 }
 ?>
 <!DOCTYPE html>
