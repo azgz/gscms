@@ -1,6 +1,7 @@
 <?php
 // index.phpからidが渡ってくるので、取得
 $id = $_GET["id"];
+
 // idに数値以外が入ってきたら、エラー
 if(!is_numeric($id)) {
 	header('location: index.php?error=id');
