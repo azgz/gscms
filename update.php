@@ -1,10 +1,15 @@
 <?php
 // index.phpからidが渡ってくるので、取得
-// TODO idが渡ってこない場合はエラーにして、index.phpへ戻す
 $id = $_GET["id"];
+// idに数値以外が入ってきたら、エラー
+if(!is_numeric($id)) {
+	header('location: index.php?error=id');
+	exit;
+}
 
 // SQLを実行し、DBから該当idのデータを取得
 // TODO エラー時の処理
+// TODO レコードが取れない場合もエラーにする
 $pdo = new PDO('mysql:dbname=gs_db;host=localhost', 'root', '');
 $stmt = $pdo->query('SET NAMES utf8');
 $stmt = $pdo->prepare("SELECT * FROM gs_cms_user WHERE id = :id");
