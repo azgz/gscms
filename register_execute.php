@@ -15,10 +15,10 @@ $stmt = $pdo->prepare("INSERT INTO gs_cms_user(
 		id, name, email, age, info, update_date, create_date) VALUES (
 		NULL, :name, :email, :age, :info, sysdate(), sysdate())");
 
-$stmt->bindParam(':name', $name);
-$stmt->bindParam(':email', $mail);
-$stmt->bindParam(':age', $age);
-$stmt->bindParam(':info', $info);
+$stmt->bindValue(':name', $name);
+$stmt->bindValue(':email', $mail);
+$stmt->bindValue(':age', $age);
+$stmt->bindValue(':info', $info);
 $flag = $stmt->execute();
 
 // register_complete.php へリダイレクト
