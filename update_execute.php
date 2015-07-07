@@ -21,7 +21,7 @@ $stmt->bindValue(':name', $name);
 $stmt->bindValue(':email', $mail);
 $stmt->bindValue(':age', $age);
 $stmt->bindValue(':info', $info);
-$flag = $stmt->execute();
+$result = $stmt->execute();
 
 // update_complete.php へリダイレクト
 header('location: update_complete.php');
