@@ -19,7 +19,7 @@ $stmt->bindValue(':name', $name);
 $stmt->bindValue(':email', $mail);
 $stmt->bindValue(':age', $age);
 $stmt->bindValue(':info', $info);
-$flag = $stmt->execute();
+$result = $stmt->execute();
 
 // register_complete.php へリダイレクト
 header('location: register_complete.php');
