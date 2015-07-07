@@ -41,6 +41,11 @@ $info = $result['info'];
 <p><input type="submit" value="更新"></p>
 <input type="hidden" name="id" value="<?php echo $id ?>">
 </form>
+<p>以下は削除時</p>
+<form method="post" action="delete_execute.php">
+<p><input type="submit" value="削除"></p>
+<input type="hidden" name="id" value="<?php echo $id ?>">
+</form>
 
 <div>
 	<ul>
