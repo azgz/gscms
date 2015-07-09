@@ -2,8 +2,9 @@
 // SQLを実行し、DBから一覧を取得
 // TODO エラー時の処理
 // TODO ページングの処理, 5件づつ表示
-$pdo = new PDO('mysql:dbname=gs_db;host=localhost', 'root', '');
-$stmt = $pdo->query('SET NAMES utf8');
+require_once './conf/config.php';
+
+$pdo = new PDO(DSN, DB_USER, DB_PASS);
 $stmt = $pdo->prepare("SELECT * FROM gs_cms_user");
 $stmt->execute();
 $view = "";
