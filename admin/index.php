@@ -1,6 +1,11 @@
 <?php
 // セッションからログインステータスをチェック
+session_start();
+
 // 非ログイン時は、login.php へリダイレクト
+if (!isset($_SESSION["STATUS"])) {
+	header('location: login.php?error=login');
+}
 // ログイン時は、SQLを実行し、DBから一覧を取得
 // SQLの結果から、HTMLを生成
 ?>
@@ -21,7 +26,7 @@
 		<li>登録時間</li>
 	</ul>
 	<!-- データベースの取得結果はここで表示 -->
-	<?php echo $view ?>
+	<?php // echo $view ?>
 </div>
 <div>
 	<ul>
