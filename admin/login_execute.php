@@ -18,14 +18,13 @@ $stmt->execute();
 $count = $stmt->fetchColumn();
 
 // 失敗時はlogin.php へリダイレクト
-if(int($count) != 1) {
+if($count != 1) {
 	header('location: login.php');
 	exit;
 }
 
 // TODO 成功時はセッションにログイン情報をセット
 $_SESSION["STATUS"] = "OK";
-
 
 // index.php へリダイレクト
 header('location: index.php');
