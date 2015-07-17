@@ -28,10 +28,5 @@ if (!isset($_SESSION["STATUS"])) {
 	<!-- データベースの取得結果はここで表示 -->
 	<?php // echo $view ?>
 </div>
-<div>
-	<ul>
-		<li><a href="register.php">登録</a></li>
-	</ul>
-</div>
 </body>
 </html>
